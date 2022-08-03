@@ -6,7 +6,7 @@ import pandas as pd
 #preciso criar um arquivo no excel pra poder fazer os teste de gravação deste
 #programa
 
-circuito = pd.read_excel('BancoDados.xltx', engine='openpyxl')
+circuito = pd.read_excel('dados.xlsx', engine='openpyxl')
 
 #criar uma lista
 lista_privil = ['Ancião', 'Servo Ministerial', 'Pioneiro(a) regulares','Publicadores','Estudante']
@@ -81,10 +81,11 @@ botao_codigo.grid(row=7, column=0, padx=10, pady=10,sticky='nswe',columnspan=4)
 
 janela.mainloop()
 
-novo_circuito = pd.DataFrame(lista_codigo, columns=['codigo_str','descricao','privilegio','alvos','data_criacao'])
+novo_circuito = pd.DataFrame(lista_codigo, columns=['CÓDIGO', 'DESCRIÇÃO', 'PRIVILÉGIO', 'ALVOS ESPIRITUAIS', 'DATA CRIAÇÃO'])
 circuito = circuito.append(novo_circuito, ignore_index=True)
-circuito.to_excel('bancoDados.xltx')
+circuito.to_excel('dados.xlsx')
 
 
 print(lista_codigo)
+
 
