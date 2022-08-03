@@ -1,6 +1,10 @@
 import tkinter as tk
 from tkinter import ttk
 import datetime as dt
+import pandas as pd
+
+
+circuito = pd.read_excel('BancoDados.xltx', engine='openpyxl')
 
 #criar uma lista
 lista_privil = ['Ancião', 'Servo Ministerial', 'Pioneiro(a) regulares','Publicadores','Estudante']
@@ -17,7 +21,7 @@ def inserir_codigo():
     alvos = entry_AlvosEsp.get()
     data_criacao = dt.datetime.now()
     data_criacao = data_criacao.strftime('%d/%m/%Y - %H:%M')
-    codigo = len(lista_codigo)+1
+    codigo = circuito.shape[0] + len(lista_codigo)+1
     codigo_str = f'COD-{codigo}'
     lista_codigo.append((codigo_str,descricao,privilegio,alvos,data_criacao))
 
@@ -74,6 +78,11 @@ botao_codigo.grid(row=7, column=0, padx=10, pady=10,sticky='nswe',columnspan=4)
 
 
 janela.mainloop()
+
+novo_circuito = pd.DataFrame(lista_codigo, columns=['codigo_str','descricao','privilegio','alvos','data_criacao'])
+circuito = circuito.append(novo_circuito, ignore_index=True)
+circuito.to_excel('bancoDados.xltx')
+
 
 print(lista_codigo)
 
