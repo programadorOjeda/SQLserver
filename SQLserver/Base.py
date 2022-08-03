@@ -6,7 +6,7 @@ import pandas as pd
 #preciso criar um arquivo no excel pra poder fazer os teste de gravação deste
 #programa
 
-circuito = pd.read_excel('dados.xlsx', engine='openpyxl')
+circuito = pd.read_excel('Pasta de trabalho 2.xlsx', engine='openpyxl')
 
 #criar uma lista
 lista_privil = ['Ancião', 'Servo Ministerial', 'Pioneiro(a) regulares','Publicadores','Estudante']
@@ -83,9 +83,9 @@ janela.mainloop()
 
 novo_circuito = pd.DataFrame(lista_codigo, columns=['CÓDIGO', 'DESCRIÇÃO', 'PRIVILÉGIO', 'ALVOS ESPIRITUAIS', 'DATA CRIAÇÃO'])
 circuito = circuito.append(novo_circuito, ignore_index=True)
-circuito.to_excel('dados.xlsx')
+circuito.to_excel('Pasta de trabalho 2.xlsx')
 
 
-print(lista_codigo)
+print('FIM DO PROGRAMA')
 
 
