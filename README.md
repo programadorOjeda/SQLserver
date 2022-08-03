@@ -31,3 +31,7 @@ os input para coletar os dados que om usuário colocará. (TKinter)
  
 
 03 - está no github '@programadorOjeda esse arquivo 
+
+
+Agora preciso colocar as informações desse app em um banco de dados (sqlser ou excel)
+video :https://www.youtube.com/watch?v=Av1fItUacgQ&list=RDCMUCafFexaRoRylOKdzGBU6Pgg&index=2
