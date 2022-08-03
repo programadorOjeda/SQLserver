@@ -3,6 +3,8 @@ from tkinter import ttk
 import datetime as dt
 import pandas as pd
 
+#preciso criar um arquivo no excel pra poder fazer os teste de gravação deste
+#programa
 
 circuito = pd.read_excel('BancoDados.xltx', engine='openpyxl')
 
