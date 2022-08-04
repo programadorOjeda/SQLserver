@@ -6,7 +6,7 @@ import pandas as pd
 #preciso criar um arquivo no excel pra poder fazer os teste de gravação deste
 #programa
 
-circuito = pd.read_excel('Pasta de trabalho 2.xlsx', engine='openpyxl')
+circuito = pd.read_excel('trabalhoBase.xlsx', engine='openpyxl')
 
 #criar uma lista
 lista_privil = ['Ancião', 'Servo Ministerial', 'Pioneiro(a) regulares','Publicadores','Estudante']
@@ -14,7 +14,8 @@ lista_codigo = []
 
 
 janela = tk.Tk()
-
+janela.geometry('350x300')
+janela.configure(background='#04BF8A')
 #criar uma função
 def inserir_codigo():
     descricao = entry_descricao.get()
@@ -83,7 +84,7 @@ janela.mainloop()
 
 novo_circuito = pd.DataFrame(lista_codigo, columns=['CÓDIGO', 'DESCRIÇÃO', 'PRIVILÉGIO', 'ALVOS ESPIRITUAIS', 'DATA CRIAÇÃO'])
 circuito = circuito.append(novo_circuito, ignore_index=True)
-circuito.to_excel('Pasta de trabalho 2.xlsx')
+circuito.to_excel('trabalhoBase.xlsx', index=False)
 
 
 print('FIM DO PROGRAMA')
